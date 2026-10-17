@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOZA — Creative Portfolio</title>
+  <meta name="description" content="HOZA — Motion Graphics, AI Filmmaking and Animation Portfolio.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* DESIGN SETTINGS — CHANGE ANYTIME */
+      --background: #0a0a0c;
+      --text: #ffffff;
+      --muted: #b5b5ba;
+
+      --card-gap: 12px;
+      --card-radius: 12px;
+
+      --motion-width: 1fr;
+      --animation-width: 1fr;
+
+      --desktop-card-ratio: 3 / 4;
+      --mobile-card-ratio: 4 / 5;
+
+      --page-width: 1180px;
+      --page-padding: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - var(--page-padding) * 2), var(--page-width));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 30px;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    /* HOMEPAGE CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns:
+        minmax(0, var(--motion-width))
+        minmax(0, var(--animation-width));
+      gap: var(--card-gap);
+      margin-top: 18px;
+    }
+
+    .card {
+      position: relative;
+      aspect-ratio: var(--desktop-card-ratio);
+      overflow: hidden;
+      border-radius: var(--card-radius);
+      isolation: isolate;
+      background: #20232b;
+      display: block;
+    }
+
+    .card.animation {
+      background: #34303c;
+    }
+
+    .media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      letter-spacing: 2px;
+      background: linear-gradient(
+        140deg,
+        rgba(255,255,255,0.07),
+        transparent 65%
+      );
+    }
+
+    .card video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+    }
+
+    .card video.ready {
+      opacity: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.22) 0%,
+        transparent 32%,
+        transparent 48%,
+        rgba(0,0,0,0.78) 100%
+      );
+      z-index: 1;
+      transition: background 0.5s ease;
+    }
+
+    .number {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      z-index: 2;
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .card-content {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+
+    .card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(25px, 3vw, 44px);
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+      margin: 0 0 20px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+    }
+
+    .arrow {
+      font-size: 24px;
+      transition: transform 0.5s ease;
+    }
+
+    /* CINEMATIC HOVER */
+    @media (hover: hover) {
+      .card:hover video {
+        transform: scale(1.02);
+      }
+
+      .card:hover .card-content {
+        transform: translateY(-4px);
+      }
+
+      .card:hover .arrow {
+        transform: translate(4px, -4px);
+      }
+    }
+
+    /* SECONDARY SECTIONS */
+    .info {
+      padding-block: 110px 45px;
+      max-width: 650px;
+    }
+
+    .info h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+    }
+
+    .info p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-block: 30px;
+      color: #85858b;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      :root {
+        --page-padding: 16px;
+      }
+
+      header {
+        padding-block: 23px;
+      }
+
+      .logo {
+        font-size: 34px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      nav a {
+        font-size: 10px;
+        letter-spacing: 0.7px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        margin-top: 12px;
+      }
+
+      .card {
+        aspect-ratio: var(--mobile-card-ratio);
+      }
+
+      .card h2 {
+        font-size: clamp(25px, 7vw, 36px);
+      }
+
+      .number {
+        top: 20px;
+        left: 20px;
+      }
+
+      .card-content {
+        left: 22px;
+        right: 22px;
+        bottom: 24px;
+      }
+
+      .info {
+        padding-top: 75px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="top">
+
+    <header>
+      <a class="logo" href="#top">HOZA.</a>
+
+      <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="cards" aria-label="Portfolio categories">
+
+        <!-- MOTION GRAPHICS / AI -->
+        <a class="card motion" href="#motion-gallery">
+          <div class="media">
+            <div class="placeholder">MOTION SHOWREEL</div>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/motion.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="overlay"></div>
+          <span class="number">01 / SELECTED WORK</span>
+
+          <div class="card-content">
+            <h2>MOTION GRAPHICS<br>& AI</h2>
+            <div class="card-footer">
+              <span>EXPLORE WORK</span>
+              <span class="arrow">↗</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ANIMATION -->
+        <a class="card animation" href="#animation-gallery">
+          <div class="media">
+            <div class="placeholder">ANIMATION SHOWREEL</div>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/animation.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="overlay"></div>
+          <span class="number">02 / ORIGINAL PROJECTS</span>
+
+          <div class="card-content">
+            <h2>ANIMATION</h2>
+            <div class="card-footer">
+              <span>EXPLORE PROJECTS</span>
+              <span class="arrow">↗</span>
+            </div>
+          </div>
+        </a>
+
+      </section>
+
+      <!-- PLACEHOLDERS FOR FUTURE GALLERIES -->
+      <section class="info" id="motion-gallery">
+        <h2>Motion Graphics / AI</h2>
+        <p>The vertical video gallery will be added here in the next phase.</p>
+      </section>
+
+      <section class="info" id="animation-gallery">
+        <h2>Animation Projects</h2>
+        <p>Films, characters, worlds and making-of projects. Coming next.</p>
+      </section>
+
+      <section class="info" id="about">
+        <h2>About HOZA.</h2>
+        <p>
+          Exploring visual storytelling through motion graphics,
+          animation, CGI and AI filmmaking.
+        </p>
+      </section>
+
+      <section class="info" id="contact">
+        <h2>Let's connect.</h2>
+        <p>Contact and social links will be added here.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> HOZA.</span>
+      <span>CREATIVE PORTFOLIO</span>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    const videos = document.querySelectorAll('.card video');
+
+    videos.forEach(video => {
+      video.addEventListener('loadeddata', () => {
+        video.classList.add('ready');
+      });
+    });
+
+    if (reduceMotion) {
+      videos.forEach(video => video.pause());
+    } else if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.25 });
+
+      videos.forEach(video => observer.observe(video));
+    }
+  </script>
+
+</body>
+</html>
