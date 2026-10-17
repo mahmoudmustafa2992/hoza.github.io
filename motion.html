@@ -516,6 +516,11 @@
   }
 }
 
+/* Hide sound control on all devices */
+#sound-btn {
+  display: none !important;
+}
+
   </style>
 </head>
 
@@ -571,7 +576,7 @@
       </aside>
 
       <div class="screen" id="screen">
-        <video id="player" playsinline muted loop preload="metadata"></video>
+<video id="player" playsinline loop preload="metadata"></video>
         <div class="status" id="status"></div>
 
         <div class="screen-shade">
@@ -630,7 +635,7 @@ const projects = [
 
     let currentIndex = 0;
     let currentFilter = "all";
-    let isMuted = true;
+let isMuted = false;
     let lastFocused = null;
 
     const reducedMotion = window.matchMedia(
