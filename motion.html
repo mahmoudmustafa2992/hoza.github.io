@@ -432,6 +432,81 @@
   }
 }
 
+/* HOZA - Mobile Fullscreen Reels Viewer */
+@media (max-width: 700px) {
+
+  /* Full mobile screen */
+  .viewer {
+    padding: 0;
+    height: 100dvh;
+  }
+
+  /* Header over video */
+  .viewer-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 16px;
+    pointer-events: none;
+  }
+
+  .viewer-header #close {
+    pointer-events: auto;
+    margin-left: auto;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Fullscreen player layout */
+  .viewer-layout {
+    display: block;
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+    border-radius: 0;
+    touch-action: pan-x;
+  }
+
+  /* Display full video without cropping */
+  .screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Hide playback controls */
+  .player-controls {
+    display: none !important;
+  }
+
+  /* Hide arrows and video counter */
+  .viewer-nav {
+    display: none !important;
+  }
+
+  /* Project title overlay */
+  .screen-shade {
+    padding: 45px 18px 35px;
+  }
+
+  .mobile-info {
+    padding-bottom: 0;
+  }
+}
+
   </style>
 </head>
 
