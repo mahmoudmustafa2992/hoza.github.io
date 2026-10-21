@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARRY V — HOZA</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #09090b;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .back {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .intro {
+      max-width: 1180px;
+      margin: 50px auto 35px;
+      padding: 0 24px;
+    }
+
+    .label {
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(48px, 9vw, 110px);
+      letter-spacing: -4px;
+    }
+
+    .film {
+      width: 100%;
+      background: black;
+    }
+
+    .film video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-size: clamp(38px, 7vw, 76px);
+      letter-spacing: -3px;
+      margin: 15px 0 30px;
+    }
+
+    .placeholder {
+      padding: 100px 24px;
+      background: #151517;
+      border: 1px solid #333;
+      text-align: center;
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 20px 16px; }
+      .logo { font-size: 29px; }
+      .intro { padding: 0 16px; margin: 35px auto 25px; }
+      h1 { letter-spacing: -2px; }
+      .section { padding: 0 16px; margin: 55px auto; }
+      .placeholder { padding: 65px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">HOZA.</a>
+    <a href="animation.html" class="back">
+      ← BACK TO ANIMATION
+    </a>
+  </header>
+
+  <main>
+
+    <div class="intro">
+      <span class="label">01 / ANIMATION PROJECT</span>
+      <h1>HARRY V</h1>
+      <span class="label">MAIN FILM</span>
+    </div>
+
+    <!-- MAIN ANIMATION FILM -->
+
+    <section class="film">
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="videos/harry-v-cover.jpg">
+
+        <source
+          src="videos/harry-v-animation-web.mp4"
+          type="video/mp4">
+
+      </video>
+    </section>
+
+    <!-- MAKING OF -->
+
+    <section class="section">
+      <span class="label">02 / BEHIND THE SCENES</span>
+
+      <h2>MAKING OF</h2>
+
+      <div class="placeholder">
+        THE MAKING OF HARRY V
+        <p>Character Design / Concept Art / Production</p>
+        <p>Coming Soon</p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
