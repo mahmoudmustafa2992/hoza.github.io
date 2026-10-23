@@ -619,6 +619,37 @@
     gap: 6px;
   }
 }
+    /* HARRY V — PLANETS GALLERY */
+
+.harry-v-planets-gallery {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.harry-environment-gallery .harry-v-planets-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .harry-v-planets-gallery {
+    gap: 6px;
+  }
+
+  .harry-environment-gallery .harry-v-planets-gallery img {
+    border-radius: 2px;
+  }
+}
   </style>
 </head>
 
@@ -978,7 +1009,39 @@
     loading="lazy">
 
 </div>
-  
+  <!-- HARRY V — 20 PLANET CONCEPT IMAGES -->
+
+<div class="harry-v-planets-gallery">
+
+  <!-- ROW 01 -->
+  <img src="images/harry-v/planet-1.jpg" alt="Planet 1" loading="lazy">
+  <img src="images/harry-v/planet-2.jpg" alt="Planet 2" loading="lazy">
+  <img src="images/harry-v/planet-3.jpg" alt="Planet 3" loading="lazy">
+  <img src="images/harry-v/planet-4.jpg" alt="Planet 4" loading="lazy">
+  <img src="images/harry-v/planet-5.jpg" alt="Planet 5" loading="lazy">
+
+  <!-- ROW 02 -->
+  <img src="images/harry-v/planet-6.jpg" alt="Planet 6" loading="lazy">
+  <img src="images/harry-v/planet-7.jpg" alt="Planet 7" loading="lazy">
+  <img src="images/harry-v/planet-8.jpg" alt="Planet 8" loading="lazy">
+  <img src="images/harry-v/planet-9.jpg" alt="Planet 9" loading="lazy">
+  <img src="images/harry-v/planet-10.jpg" alt="Planet 10" loading="lazy">
+
+  <!-- ROW 03 -->
+  <img src="images/harry-v/planet-11.jpg" alt="Planet 11" loading="lazy">
+  <img src="images/harry-v/planet-12.jpg" alt="Planet 12" loading="lazy">
+  <img src="images/harry-v/planet-13.jpg" alt="Planet 13" loading="lazy">
+  <img src="images/harry-v/planet-14.jpg" alt="Planet 14" loading="lazy">
+  <img src="images/harry-v/planet-15.jpg" alt="Planet 15" loading="lazy">
+
+  <!-- ROW 04 -->
+  <img src="images/harry-v/planet-16.jpg" alt="Planet 16" loading="lazy">
+  <img src="images/harry-v/planet-17.jpg" alt="Planet 17" loading="lazy">
+  <img src="images/harry-v/planet-18.jpg" alt="Planet 18" loading="lazy">
+  <img src="images/harry-v/planet-19.jpg" alt="Planet 19" loading="lazy">
+  <img src="images/harry-v/planet-20.jpg" alt="Planet 20" loading="lazy">
+
+</div>
 </section>
 
 
