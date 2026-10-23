@@ -322,6 +322,35 @@
   transition: opacity 0.22s ease;
 }
 
+/* HARRY V — STORYBOARD IMAGES */
+
+.storyboards-row {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin: 0 auto 100px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.storyboards-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .storyboards-row {
+    gap: 6px;
+    margin-bottom: 65px;
+  }
+}
+
   </style>
 </head>
 
@@ -455,6 +484,25 @@
   </div>
 
 </section>
+
+<!-- HARRY V — STORYBOARD IMAGES -->
+
+<section class="storyboards-row">
+
+  <!-- STORYBOARD 01 -->
+  <img
+    src="images/harry-v/2se.jpg"
+    alt="HARRY V — Storyboard Sheet 01"
+    loading="lazy">
+
+  <!-- STORYBOARD 02 -->
+  <img
+    src="images/harry-v/9se.jpg"
+    alt="HARRY V — Storyboard Sheet 02"
+    loading="lazy">
+
+</section>
+
 
   </main>
 
