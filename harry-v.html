@@ -461,6 +461,48 @@
   }
 }
 
+/* HARRY V — ENVIRONMENT CONCEPT GALLERY */
+
+.sketch-composition {
+  margin-bottom: 16px;
+}
+
+.environment-concepts {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin: 0 auto 50px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.environment-concepts img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Bottom image spans both columns */
+.environment-concepts .environment-bottom {
+  grid-column: 1 / -1;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .environment-concepts {
+    gap: 6px;
+    margin-bottom: 35px;
+  }
+
+  .environment-concepts img {
+    border-radius: 2px;
+  }
+}
+
   </style>
 </head>
 
@@ -676,6 +718,31 @@
     class="sketch-portrait"
     src="images/harry-v/harry-v-sketchbook.jpg"
     alt="HARRY V — Original Storyboard Sketchbook"
+    loading="lazy">
+
+</section>
+
+<!-- HARRY V — ENVIRONMENT CONCEPT GALLERY -->
+
+<section class="environment-concepts">
+
+  <!-- TOP LEFT -->
+  <img
+    src="images/harry-v/environment-7-1.jpg"
+    alt="HARRY V — Environment Concept 7-1"
+    loading="lazy">
+
+  <!-- TOP RIGHT -->
+  <img
+    src="images/harry-v/environment-10.jpg"
+    alt="HARRY V — Environment Concept 10"
+    loading="lazy">
+
+  <!-- BOTTOM — FULL WIDTH -->
+  <img
+    class="environment-bottom"
+    src="images/harry-v/environment-5-2.jpg"
+    alt="HARRY V — Environment Concept 5-2"
     loading="lazy">
 
 </section>
