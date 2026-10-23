@@ -565,6 +565,34 @@
         gap: 6px;
     }
 }
+    /* HARRY V — SYKO FULL WIDTH IMAGES */
+
+#syko-full-gallery {
+    width: calc(100% - 32px) !important;
+    max-width: 1100px !important;
+    margin: 0 auto 16px !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+}
+
+#syko-full-gallery > img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    #syko-full-gallery {
+        gap: 6px !important;
+    }
+}
   </style>
 </head>
 
@@ -888,7 +916,7 @@
 
   <!-- SYKO CHARACTER SHEETS -->
 
-<section class="harryv-gallery harryv-gallery-fullwidth">
+<section class="harryv-gallery-fullwidth" id="syko-full-gallery">
   <img
     src="images/harry-v/syko-1.jpg"
     alt="HARRY V — Syko 1"
