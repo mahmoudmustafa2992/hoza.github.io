@@ -544,7 +544,27 @@
     border-radius: 2px;
   }
 }
+.harryv-gallery-fullwidth {
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
+.harryv-gallery-fullwidth img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .harryv-gallery-fullwidth {
+        gap: 6px;
+    }
+}
   </style>
 </head>
 
@@ -866,6 +886,29 @@
     alt="HARRY V — UNO Compound 2"
     loading="lazy">
 
+  <!-- SYKO CHARACTER SHEETS -->
+
+<section class="harryv-gallery harryv-gallery-fullwidth">
+  <img
+    src="images/harry-v/syko-1.jpg"
+    alt="HARRY V — Syko 1"
+    loading="lazy">
+
+  <img
+    src="images/harry-v/syko-2.jpg"
+    alt="HARRY V — Syko 2"
+    loading="lazy">
+
+  <img
+    src="images/harry-v/syko-3.jpg"
+    alt="HARRY V — Syko 3"
+    loading="lazy">
+
+  <img
+    src="images/harry-v/syko-4.jpg"
+    alt="HARRY V — Syko 4"
+    loading="lazy">
+</section>
 </section>
 
 
