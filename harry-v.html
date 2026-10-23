@@ -503,6 +503,48 @@
   }
 }
 
+/* HARRY V — 19 ENVIRONMENT GALLERY */
+
+/* Connect with previous section */
+.environment-concepts {
+  margin-bottom: 16px;
+}
+
+.harry-environment-gallery {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin: 0 auto 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.harry-environment-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Image 19 — full width */
+.harry-environment-gallery .gallery-final {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+  .harry-environment-gallery {
+    gap: 6px;
+    margin-bottom: 35px;
+  }
+
+  .harry-environment-gallery img {
+    border-radius: 2px;
+  }
+}
+
   </style>
 </head>
 
@@ -743,6 +785,49 @@
     class="environment-bottom"
     src="images/harry-v/environment-5-2.jpg"
     alt="HARRY V — Environment Concept 5-2"
+    loading="lazy">
+
+</section>
+
+<!-- HARRY V — 19 ENVIRONMENT IMAGES -->
+
+<section class="harry-environment-gallery">
+
+  <!-- ROW 01 -->
+  <img src="images/harry-v/env-1.webp" alt="Environment 1" loading="lazy">
+  <img src="images/harry-v/env-4.webp" alt="Environment 4" loading="lazy">
+  <img src="images/harry-v/env-5.webp" alt="Environment 5" loading="lazy">
+
+  <!-- ROW 02 -->
+  <img src="images/harry-v/env-7.webp" alt="Environment 7" loading="lazy">
+  <img src="images/harry-v/env-9.webp" alt="Environment 9" loading="lazy">
+  <img src="images/harry-v/env-mono-6.webp" alt="Environment Mono 6" loading="lazy">
+
+  <!-- ROW 03 -->
+  <img src="images/harry-v/env-mono-8.webp" alt="Environment Mono 8" loading="lazy">
+  <img src="images/harry-v/env-mono-9.webp" alt="Environment Mono 9" loading="lazy">
+  <img src="images/harry-v/env-mono-11.webp" alt="Environment Mono 11" loading="lazy">
+
+  <!-- ROW 04 -->
+  <img src="images/harry-v/env-mono-12.webp" alt="Environment Mono 12" loading="lazy">
+  <img src="images/harry-v/env-mono-15.webp" alt="Environment Mono 15" loading="lazy">
+  <img src="images/harry-v/mono-compound-3.webp" alt="Mono Compound 3" loading="lazy">
+
+  <!-- ROW 05 -->
+  <img src="images/harry-v/monooo.webp" alt="Mono Environment" loading="lazy">
+  <img src="images/harry-v/monoss.webp" alt="Mono Environment Detail" loading="lazy">
+  <img src="images/harry-v/sumo-3.webp" alt="Sumo 3" loading="lazy">
+
+  <!-- ROW 06 -->
+  <img src="images/harry-v/sumo-4.webp" alt="Sumo 4" loading="lazy">
+  <img src="images/harry-v/sumo-5.webp" alt="Sumo 5" loading="lazy">
+  <img src="images/harry-v/sumo-compound.webp" alt="Sumo Compound" loading="lazy">
+
+  <!-- IMAGE 19 — FULL WIDTH -->
+  <img
+    class="gallery-final"
+    src="images/harry-v/uno-compound-2.webp"
+    alt="HARRY V — UNO Compound 2"
     loading="lazy">
 
 </section>
