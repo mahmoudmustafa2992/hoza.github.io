@@ -6,7 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ROCKET SPACE — 3D animation project by HOZA.">
   <title>ROCKET SPACE — HOZA</title>
+    .bts-wrap {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 0 auto 80px;
+    }
 
+    .bts-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 0 0 24px;
+    }
+
+    .bts-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bts-gallery img,
+    .bts-gallery video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: #111;
+    }
+
+    .bts-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .bts-row-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .bts-title {
+        font-size: 22px;
+      }
+
+      .bts-row-2,
+      .bts-row-3 {
+        grid-template-columns: 1fr;
+      }
+    }
   <style>
     * {
       box-sizing: border-box;
@@ -127,6 +177,34 @@
         <source src="videos/rocket-space.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
+    </section>
+        <section class="bts-wrap">
+      <h2 class="bts-title">BEHIND THE SCENES</h2>
+
+      <div class="bts-gallery">
+
+        <!-- Full width image -->
+        <img src="images/rocket-space/bts-01.jpg" alt="Rocket Space Behind The Scenes 01" loading="lazy">
+
+        <!-- Two images beside each other -->
+        <div class="bts-row-2">
+          <img src="images/rocket-space/bts-02.jpg" alt="Rocket Space Behind The Scenes 02" loading="lazy">
+          <img src="images/rocket-space/bts-03.jpg" alt="Rocket Space Behind The Scenes 03" loading="lazy">
+        </div>
+
+        <!-- Full width video -->
+        <video controls playsinline preload="metadata">
+          <source src="videos/rocket-space-bts.mp4" type="video/mp4">
+        </video>
+
+        <!-- Three images beside each other -->
+        <div class="bts-row-3">
+          <img src="images/rocket-space/bts-04.jpg" alt="Rocket Space Behind The Scenes 04" loading="lazy">
+          <img src="images/rocket-space/bts-05.jpg" alt="Rocket Space Behind The Scenes 05" loading="lazy">
+          <img src="images/rocket-space/bts-06.jpg" alt="Rocket Space Behind The Scenes 06" loading="lazy">
+        </div>
+
+      </div>
     </section>
   </main>
 </body>
