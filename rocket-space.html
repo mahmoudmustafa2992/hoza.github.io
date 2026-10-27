@@ -167,7 +167,32 @@
   background: #000;
   border-radius: 10px;
 }
+.rocket-stills-wrap {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin: 32px auto 60px;
+}
 
+.rocket-stills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.rocket-stills-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #111;
+}
+
+@media (max-width: 768px) {
+  .rocket-stills-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -191,6 +216,27 @@
         Your browser does not support HTML5 video.
       </video>
     </section>
+    
+<section class="rocket-stills-wrap">
+  <div class="rocket-stills-grid">
+    <img src="images/rocket-space/rocket-shot-01.jpg" alt="Rocket Space Still 01" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-02.jpg" alt="Rocket Space Still 02" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-03.jpg" alt="Rocket Space Still 03" loading="lazy">
+
+    <img src="images/rocket-space/rocket-shot-04.jpg" alt="Rocket Space Still 04" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-05.jpg" alt="Rocket Space Still 05" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-06.jpg" alt="Rocket Space Still 06" loading="lazy">
+
+    <img src="images/rocket-space/rocket-shot-07.jpg" alt="Rocket Space Still 07" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-08.jpg" alt="Rocket Space Still 08" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-09.jpg" alt="Rocket Space Still 09" loading="lazy">
+
+    <img src="images/rocket-space/rocket-shot-10.jpg" alt="Rocket Space Still 10" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-11.jpg" alt="Rocket Space Still 11" loading="lazy">
+    <img src="images/rocket-space/rocket-shot-12.jpg" alt="Rocket Space Still 12" loading="lazy">
+  </div>
+</section>
+    
        <!-- ROCKET SPACE - BEHIND THE SCENES -->
 
 <!-- ROCKET SPACE - BEHIND THE SCENES -->
