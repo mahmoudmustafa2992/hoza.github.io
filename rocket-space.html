@@ -132,6 +132,24 @@
   border-radius: 10px;
 }
 
+/* ROCKET SPACE - BTS VIDEOS GRID */
+.rocket-bts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.rocket-bts-grid video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+  border-radius: 10px;
+}
+
   </style>
 </head>
 
@@ -172,6 +190,43 @@
 
     Your browser does not support HTML5 video.
   </video>
+
+<!-- ROCKET SPACE - BTS VIDEOS GRID -->
+<div class="rocket-bts-grid">
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-1.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-2.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-3.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-4.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-5.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-6.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-7.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="metadata">
+    <source src="videos/rocket-8.mp4" type="video/mp4">
+  </video>
+
+</div>
 
 </section>
 
