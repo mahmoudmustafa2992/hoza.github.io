@@ -131,14 +131,29 @@
       </video>
 
       <!-- 02: Two videos, side by side, combined width = main film -->
-      <div class="dematre-videos">
-        <video controls playsinline preload="none">
-          <source src="videos/dematre-poses.mp4" type="video/mp4">
-        </video>
-        <video controls playsinline preload="none">
-          <source src="videos/dematre-action.mp4" type="video/mp4">
-        </video>
-      </div>
+      
+<div class="dematre-videos">
+
+  <!-- LEFT VIDEO -->
+  <video
+    controls
+    playsinline
+    preload="none"
+    poster="videos/dematre-poses-poster.jpg">
+    <source src="videos/dematre-poses.mp4" type="video/mp4">
+  </video>
+
+  <!-- RIGHT VIDEO -->
+  <video
+    controls
+    playsinline
+    preload="none"
+    poster="videos/dematre-action-poster.jpg">
+    <source src="videos/dematre-action.mp4" type="video/mp4">
+  </video>
+
+</div>
+
 
       <!-- 03: Four artworks, stacked vertically, each full content width -->
       <div class="dematre-gallery">
