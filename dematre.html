@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DEMATRE — original stylized 2D character design and animation by HOZA.">
+  <title>DEMATRE — HOZA</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #09090b;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+    .back {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: right;
+    }
+    .intro {
+      max-width: 1180px;
+      margin: 50px auto 35px;
+      padding: 0 24px;
+    }
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 2px;
+    }
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(48px, 9vw, 110px);
+      line-height: 1.06;
+      letter-spacing: -4px;
+    }
+
+    /* Every content block uses EXACTLY the main film width. */
+    .dematre-content {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 0 auto 80px;
+    }
+    .dematre-main-video {
+      width: 100%;
+      display: block;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #000;
+    }
+    .dematre-videos {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .dematre-videos video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: contain;
+      background: #000;
+      border-radius: 8px;
+      min-width: 0;
+    }
+    .dematre-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      margin-top: 12px;
+    }
+    .dematre-gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 20px 16px; }
+      .logo { font-size: 29px; }
+      .intro { padding: 0 16px; margin: 35px auto 25px; }
+      h1 { letter-spacing: -2px; }
+      .dematre-videos { gap: 6px; margin-top: 6px; }
+      .dematre-gallery { gap: 6px; margin-top: 6px; }
+      .dematre-videos video, .dematre-gallery img { border-radius: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">HOZA.</a>
+    <a href="animation.html" class="back">&larr; BACK TO ANIMATION</a>
+  </header>
+
+  <main>
+    <div class="intro">
+      <span class="label">04 / ANIMATION PROJECT</span>
+      <h1>DEMATRE</h1>
+      <span class="label">2D CHARACTER ANIMATION</span>
+    </div>
+
+    <section class="dematre-content" aria-label="DEMATRE animation and character artwork">
+      <!-- 01: Main film -- full content width -->
+      <video class="dematre-main-video" controls playsinline preload="metadata"
+             poster="videos/dematre-cover.jpg">
+        <source src="videos/dematre-character.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+
+      <!-- 02: Two videos, side by side, combined width = main film -->
+      <div class="dematre-videos">
+        <video controls playsinline preload="none">
+          <source src="videos/dematre-poses.mp4" type="video/mp4">
+        </video>
+        <video controls playsinline preload="none">
+          <source src="videos/dematre-action.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 03: Four artworks, stacked vertically, each full content width -->
+      <div class="dematre-gallery">
+        <img src="images/dematre/dematre-01.jpg" alt="DEMATRE — Character in action" loading="lazy" decoding="async">
+        <img src="images/dematre/dematre-02.jpg" alt="DEMATRE — Character turnaround and personality notes" loading="lazy" decoding="async">
+        <img src="images/dematre/dematre-03.jpg" alt="DEMATRE — Just consequences" loading="lazy" decoding="async">
+        <img src="images/dematre/dematre-04.jpg" alt="DEMATRE — Character concept board" loading="lazy" decoding="async">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
