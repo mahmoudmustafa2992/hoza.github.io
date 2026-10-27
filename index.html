@@ -236,6 +236,34 @@
       font-size: 14px;
     }
 
+    /* CONTACT LINKS */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 15px 18px;
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.035);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.55);
+    }
+
     footer {
       display: flex;
       justify-content: space-between;
@@ -405,7 +433,15 @@
 
       <section class="info" id="contact">
         <h2>Let's connect.</h2>
-        <p>Contact and social links will be added here.</p>
+        <p>Have a project or collaboration in mind? Reach out on Instagram.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.instagram.com/hozaanimates/" target="_blank" rel="noopener noreferrer" aria-label="HOZA Animation on Instagram">
+            <span>INSTAGRAM / ANIMATION</span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-link" href="https://www.instagram.com/hozaamotion/" target="_blank" rel="noopener noreferrer" aria-label="HOZA Motion on Instagram">
+            <span>INSTAGRAM / MOTION</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
     </main>
 
