@@ -150,6 +150,24 @@
   border-radius: 10px;
 }
 
+/* ROCKET SPACE - BTS THREE COLUMN VIDEOS */
+.rocket-bts-triple-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.rocket-bts-triple-grid video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #000;
+  border-radius: 10px;
+}
+
   </style>
 </head>
 
@@ -224,6 +242,35 @@
 
   <video controls playsinline preload="metadata">
     <source src="videos/rocket-8.mp4" type="video/mp4">
+  </video>
+
+</div>
+
+<!-- ROCKET SPACE - BTS VIDEOS 09 TO 14 -->
+<div class="rocket-bts-triple-grid">
+
+  <video controls playsinline preload="none" poster="videos/rocket-9.jpg">
+    <source src="videos/rocket-9.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="none" poster="videos/rocket-10.jpg">
+    <source src="videos/rocket-10.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="none" poster="videos/rocket-11.jpg">
+    <source src="videos/rocket-11.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="none" poster="videos/rocket-12.jpg">
+    <source src="videos/rocket-12.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="none" poster="videos/rocket-13.jpg">
+    <source src="videos/rocket-13.mp4" type="video/mp4">
+  </video>
+
+  <video controls playsinline preload="none" poster="videos/rocket-14.jpg">
+    <source src="videos/rocket-14.mp4" type="video/mp4">
   </video>
 
 </div>
