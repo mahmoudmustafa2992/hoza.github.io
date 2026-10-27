@@ -68,7 +68,7 @@
     .runaway-clips {
       width: calc(100% - 32px);
       max-width: 1100px;
-      margin: 0 auto 70px;
+      margin: 0 auto 40px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
@@ -83,8 +83,35 @@
       border-radius: 8px;
     }
     @media (max-width: 600px) {
-      .runaway-clips { gap: 6px; margin-bottom: 50px; }
+      .runaway-clips { gap: 6px; margin-bottom: 30px; }
       .runaway-clips video { border-radius: 5px; }
+    }
+
+    /* Runaway Ride: one Behind the Scenes video, matching main film width */
+    .runaway-bts {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 0 auto 70px;
+    }
+    .runaway-bts h2 {
+      margin: 0 0 22px;
+      text-align: center;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .runaway-bts video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #000;
+      border-radius: 8px;
+    }
+    @media (max-width: 600px) {
+      .runaway-bts h2 { margin-bottom: 14px; letter-spacing: 1px; }
+      .runaway-bts { margin-bottom: 50px; }
     }
   </style>
 </head>
@@ -116,6 +143,16 @@
       </video>
       <video controls playsinline preload="none" poster="videos/runaway-comics.jpg">
         <source src="videos/runaway-comics.mp4" type="video/mp4">
+      </video>
+    </section>
+
+
+    <!-- Only one Behind the Scenes video -->
+    <section class="runaway-bts" aria-label="Runaway Ride Behind the Scenes">
+      <h2>BEHIND THE SCENES</h2>
+      <video controls playsinline preload="none" poster="videos/runaway-bts.jpg">
+        <source src="videos/runaway-bts.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
       </video>
     </section>
   </main>
