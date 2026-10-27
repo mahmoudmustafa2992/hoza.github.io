@@ -46,7 +46,7 @@
     .film {
       width: calc(100% - 32px);
       max-width: 1100px;
-      margin: 0 auto 70px;
+      margin: 0 auto 12px;
       background: #000;
     }
     .film video {
@@ -61,7 +61,30 @@
       .logo { font-size: 29px; }
       .intro { padding: 0 16px; margin: 35px auto 25px; }
       h1 { letter-spacing: -2px; }
-      .film { margin-bottom: 50px; }
+      .film { margin-bottom: 12px; }
+    }
+
+    /* Three vertical clips: same combined width as the main film */
+    .runaway-clips {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 0 auto 70px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .runaway-clips video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      height: auto;
+      object-fit: contain;
+      background: #000;
+      border-radius: 8px;
+    }
+    @media (max-width: 600px) {
+      .runaway-clips { gap: 6px; margin-bottom: 50px; }
+      .runaway-clips video { border-radius: 5px; }
     }
   </style>
 </head>
@@ -80,6 +103,19 @@
       <video controls playsinline preload="metadata" poster="videos/runaway-ride-cover.jpg">
         <source src="videos/runaway-ride.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
+      </video>
+    </section>
+
+    <!-- Three vertical clips immediately below the main film -->
+    <section class="runaway-clips" aria-label="Runaway Ride animation clips">
+      <video controls playsinline preload="none" poster="videos/runaway-sfx.jpg">
+        <source src="videos/runaway-sfx.mp4" type="video/mp4">
+      </video>
+      <video controls playsinline preload="none" poster="videos/runaway-pixels.jpg">
+        <source src="videos/runaway-pixels.mp4" type="video/mp4">
+      </video>
+      <video controls playsinline preload="none" poster="videos/runaway-comics.jpg">
+        <source src="videos/runaway-comics.mp4" type="video/mp4">
       </video>
     </section>
   </main>
