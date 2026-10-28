@@ -236,6 +236,73 @@
       font-size: 14px;
     }
 
+    /* ABOUT HOZA — EDITORIAL INTRO */
+    .about-info {
+      max-width: 760px;
+    }
+
+    .about-info .about-eyebrow {
+      margin: 0 0 12px;
+      color: #85858b;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .about-info h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .about-info .about-role {
+      margin: 0 0 6px;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .about-info .about-focus {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    .about-info .about-motto {
+      margin: 30px 0 20px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(25px, 3.5vw, 36px);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .about-info .about-description {
+      max-width: 650px;
+      margin: 0 0 14px;
+    }
+
+    .about-info .about-specialties-label {
+      margin: 30px 0 7px;
+      color: #85858b;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .about-info .about-specialties {
+      margin: 0;
+      color: #c4c4c8;
+      font-size: 13px;
+      line-height: 2;
+    }
+
     /* CONTACT LINKS */
     .contact-links {
       display: flex;
@@ -412,11 +479,28 @@
 
       </section>
 
-      <section class="info" id="about">
-        <h2>About HOZA.</h2>
-        <p>
-          Exploring visual storytelling through motion graphics,
-          animation, CGI and AI filmmaking.
+      <section class="info about-info" id="about" aria-labelledby="about-title">
+        <p class="about-eyebrow">THE ARTIST BEHIND THE WORK</p>
+        <h2 id="about-title">ABOUT HOZA.</h2>
+        <p class="about-role">2D/3D Creator | Animation Artist</p>
+        <p class="about-focus">Characters • Environments • Stories</p>
+
+        <h3 class="about-motto">As long as we breathe, we create.</h3>
+
+        <p class="about-description">
+          I bring stylized worlds and character-driven stories to life through
+          animation, character design, and visual development.
+        </p>
+        <p class="about-description">
+          I'm always looking to collaborate with talented, passionate people
+          to create something unique, meaningful, and exciting.
+        </p>
+
+        <p class="about-specialties-label">SPECIALTIES</p>
+        <p class="about-specialties">
+          3D Modeling · Character Animation · Rigging · Stylized Art ·
+          Character Design · Visual Development · Motion Design ·
+          Real-Time Visualization · Game Art &amp; Prototyping
         </p>
       </section>
 
