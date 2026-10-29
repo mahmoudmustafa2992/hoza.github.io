@@ -65,6 +65,72 @@
       h1 { letter-spacing: -2px; }
       .cover { margin-bottom: 60px; }
     }
+    .gallery {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 0 auto 110px;
+      text-align: left;
+    }
+    .gallery-heading {
+      padding: 36px 0 12px;
+      border-top: 1px solid rgba(255,255,255,.16);
+    }
+    .gallery-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(26px, 4vw, 42px);
+      letter-spacing: -1px;
+    }
+    .gallery-heading p {
+      margin: 0;
+      color: #a5a5ab;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .artwork {
+      margin: 40px 0 0;
+    }
+    .artwork figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px 20px;
+      margin: 0 0 14px;
+      text-align: left;
+    }
+    .artwork-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -.2px;
+    }
+    .artwork-note {
+      font-size: 11px;
+      color: #a5a5ab;
+      line-height: 1.6;
+    }
+    .artwork a {
+      display: block;
+      outline-offset: 4px;
+      background: #1b1b1e;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .artwork a:focus-visible {
+      outline: 2px solid #fff;
+    }
+    .artwork img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #fff;
+    }
+    .artwork-hint {
+      color: #85858b;
+      font-size: 11px;
+      margin-top: 12px;
+    }
   </style>
 </head>
 <body>
@@ -80,6 +146,49 @@
     <figure class="cover">
       <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/0892eccb-a0cc-4575-95ba-5bb1736f2558.jpg" alt="JAW original illustrated character design by HOZA" fetchpriority="high">
     </figure>
+    <section class="gallery" aria-label="JAW character artwork">
+      <div class="gallery-heading">
+        <h2>CHARACTER DEVELOPMENT</h2>
+        <p>Exploring JAW's design, expressions, proportions, and costumes.</p>
+      </div>
+      <figure class="artwork">
+        <figcaption>
+          <span class="artwork-title">01 / Character Overview</span>
+          <span class="artwork-note">Character profile, silhouettes, costumes and color palette.</span>
+        </figcaption>
+        <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/4868a0e9-39db-4a1b-957d-e19d3274600b.png" target="_blank" rel="noopener noreferrer" aria-label="Open Character Overview artwork at full size">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/4868a0e9-39db-4a1b-957d-e19d3274600b.png" alt="JAW character overview sheet with character profile, color palette and outfit designs" loading="lazy">
+        </a>
+      </figure>
+      <figure class="artwork">
+        <figcaption>
+          <span class="artwork-title">02 / Character Model Sheet</span>
+          <span class="artwork-note">Poses, turnarounds and expression exploration.</span>
+        </figcaption>
+        <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/94b48a96-68c9-4345-8d69-15368b8680da.png" target="_blank" rel="noopener noreferrer" aria-label="Open Character Model Sheet artwork at full size">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/94b48a96-68c9-4345-8d69-15368b8680da.png" alt="JAW model sheet showing facial expressions and front, side and back views" loading="lazy">
+        </a>
+      </figure>
+      <figure class="artwork">
+        <figcaption>
+          <span class="artwork-title">03 / Outfit Explorations / 01</span>
+          <span class="artwork-note">Casual wardrobe and appearance variations.</span>
+        </figcaption>
+        <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/d9022f3b-9d0a-4e85-a012-7515b490c7f0.png" target="_blank" rel="noopener noreferrer" aria-label="Open Outfit Explorations / 01 artwork at full size">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/d9022f3b-9d0a-4e85-a012-7515b490c7f0.png" alt="JAW character in three casual clothing variations" loading="lazy">
+        </a>
+      </figure>
+      <figure class="artwork">
+        <figcaption>
+          <span class="artwork-title">04 / Outfit Explorations / 02</span>
+          <span class="artwork-note">Layered wardrobe and accessory explorations.</span>
+        </figcaption>
+        <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/26dfa2d7-1a67-441a-b8af-c86937803bb5.png" target="_blank" rel="noopener noreferrer" aria-label="Open Outfit Explorations / 02 artwork at full size">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/26dfa2d7-1a67-441a-b8af-c86937803bb5.png" alt="JAW character in three layered clothing variations" loading="lazy">
+        </a>
+      </figure>
+      <p class="artwork-hint">Click any artwork to view it at full size.</p>
+    </section>
   </main>
 </body>
 </html>
