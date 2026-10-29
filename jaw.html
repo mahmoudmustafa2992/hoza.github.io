@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JAW — Character Design by HOZA.">
+  <title>JAW — HOZA</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      background: #09090b;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-header {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .logo { font-size: 34px; font-weight: 900; letter-spacing: -2px; }
+    .back { font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+    .intro {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 55px auto 28px;
+      text-align: left;
+    }
+    .label {
+      color: #a5a5ab;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    h1 {
+      margin: 14px 0 8px;
+      font-size: clamp(52px, 9vw, 106px);
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+    .cover {
+      width: calc(100% - 32px);
+      max-width: 1100px;
+      margin: 0 auto 95px;
+    }
+    .cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #fff;
+    }
+    @media (max-width: 600px) {
+      .site-header { padding: 22px 16px; }
+      .logo { font-size: 29px; }
+      .back { font-size: 10px; }
+      .intro { margin-top: 30px; }
+      h1 { letter-spacing: -2px; }
+      .cover { margin-bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="HOZA home">HOZA.</a>
+    <a class="back" href="animation.html#characters">BACK TO CHARACTERS ↗</a>
+  </header>
+  <main>
+    <div class="intro">
+      <span class="label">CHARACTER DESIGN</span>
+      <h1>JAW</h1>
+    </div>
+    <figure class="cover">
+      <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/0892eccb-a0cc-4575-95ba-5bb1736f2558.jpg" alt="JAW original illustrated character design by HOZA" fetchpriority="high">
+    </figure>
+  </main>
+</body>
+</html>
