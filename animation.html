@@ -1,272 +1,350 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animation — HOZA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HOZA — Animation, character design, 2D & 3D artwork, and works in development.">
+  <title>Animation & Visual Art — HOZA</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090b;
+      --text: #fff;
+      --muted: #a5a5ab;
+      --line: rgba(255,255,255,.13);
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; }
+    .site-header {
+      max-width: 1180px;
+      padding: 30px 24px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+    .back {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    main {
+      width: calc(100% - 32px);
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 36px 0 94px;
+    }
+    .page-title {
+      padding: 10px 0 35px;
+      text-align: left;
+    }
+    .page-title h1 {
+      margin: 0 0 16px;
+      font-size: clamp(39px, 6.5vw, 84px);
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+    }
+    .page-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      padding: 0 0 34px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+    .section-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 10px 13px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      color: #d3d3d6;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .65px;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .section-nav a:hover,
+    .section-nav a:focus-visible {
+      background: #242428;
+      border-color: rgba(255,255,255,.4);
+      color: #fff;
+    }
+    .portfolio-section {
+      padding-top: 56px;
+      scroll-margin-top: 24px;
+      text-align: left;
+    }
+    .portfolio-section + .portfolio-section {
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+    .section-head {
+      margin: 0 0 22px;
+      text-align: left;
+    }
+    .section-number {
+      display: block;
+      color: #85858b;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(25px, 3.2vw, 40px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .section-head p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    /* Completed projects: two compact landscape cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .work-card {
+      position: relative;
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #151518;
+      isolation: isolate;
+    }
+    .work-card img {
+      width: 100%;
+      height: 100%;
+      transition: transform .45s ease;
+    }
+    .work-card:hover img,
+    .work-card:focus-visible img { transform: scale(1.035); }
+    .work-card:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .project-card {
+      aspect-ratio: 16 / 9;
+    }
+    .project-card img {
+      object-fit: contain;
+      object-position: center;
+    }
+    .project-card.hv-store-card img { object-fit: cover; }
+    .work-card::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,.78) 100%);
+    }
+    .card-content {
+      position: absolute;
+      z-index: 1;
+      left: 5%;
+      bottom: 7%;
+      right: 5%;
+      text-align: left;
+    }
+    .card-content h3 {
+      margin: 0 0 9px;
+      font-size: clamp(20px, 3.4vw, 36px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.84);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-body {
-  margin: 0;
-  background: #09090b;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    /* Characters: portrait-first format */
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    .character-card {
+      aspect-ratio: 3 / 4;
+    }
+    .character-card img {
+      object-fit: cover;
+      object-position: center;
+    }
+    .character-card .card-content h3 {
+      font-size: clamp(19px, 2.5vw, 30px);
+    }
+    .character-card .card-meta { font-size: 9px; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* HEADER */
-
-header {
-  max-width: 1180px;
-  margin: auto;
-  padding: 30px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: -2px;
-}
-
-.back {
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* PAGE TITLE */
-
-.page-title {
-  max-width: 1180px;
-  margin: 55px auto 35px;
-  padding: 0 24px;
-}
-
-.page-title h1 {
-  margin: 0;
-  font-size: clamp(40px, 7vw, 90px);
-  letter-spacing: -3px;
-}
-
-/* ANIMATION PROJECTS */
-
-.project {
-  position: relative;
-  display: block;
-  width: calc(100% - 32px);
-  max-width: 1100px;
-  margin: 0 auto 70px;
-  aspect-ratio: 16 / 9;
-  background: #111;
-  overflow: hidden;
-}
-
-.project img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.hv-store-project img {
-  object-fit: cover;
-  object-position: center;
-}
-
-.project:hover img {
-  transform: scale(1.02);
-}
-
-.project::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    transparent 45%,
-    rgba(0,0,0,0.75)
-  );
-  pointer-events: none;
-}
-
-.project-info {
-  position: absolute;
-  bottom: 6%;
-  left: 5%;
-  right: 5%;
-  z-index: 2;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 16px;
-}
-
-.project-info h2 {
-  margin: 0;
-  font-size: clamp(32px, 8vw, 110px);
-  letter-spacing: -3px;
-  line-height: 1;
-}
-
-.project-info p {
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.explore {
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-  header {
-    padding: 22px 16px;
-  }
-
-  .logo {
-    font-size: 29px;
-  }
-
-  .page-title {
-    margin: 35px auto 24px;
-    padding: 0 16px;
-  }
-
-  .project-info h2 {
-    letter-spacing: -1px;
-  }
-
-  .project-info p,
-  .explore {
-    font-size: 8px;
-  }
-}
-</style>
+    /* Empty sections are intentionally clean until real work is uploaded */
+    .empty-state {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #86868c;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .empty-state svg {
+      flex: none;
+      margin-right: 10px;
+      stroke: currentColor;
+    }
+    @media (max-width: 700px) {
+      .site-header { padding: 22px 16px; }
+      .logo { font-size: 29px; }
+      .back { font-size: 10px; }
+      main { padding-top: 18px; padding-bottom: 70px; }
+      .page-title { padding-bottom: 25px; }
+      .page-title h1 { letter-spacing: -1.5px; }
+      .section-nav { gap: 8px; padding-bottom: 24px; }
+      .section-nav a { font-size: 9px; padding: 9px 10px; }
+      .portfolio-section { padding-top: 36px; }
+      .portfolio-section + .portfolio-section { margin-top: 24px; }
+      .projects-grid { grid-template-columns: 1fr; gap: 12px; }
+      .characters-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .card-content h3 { font-size: clamp(21px, 5vw, 32px); }
+      .card-meta { font-size: 9px; }
+    }
+    @media (max-width: 390px) {
+      .characters-grid { grid-template-columns: 1fr; }
+      .character-card { max-width: 350px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .work-card img, .section-nav a { transition: none; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="HOZA home">HOZA.</a>
+    <a class="back" href="index.html">BACK TO HOME ↗</a>
+  </header>
 
-<header>
-  <a href="index.html" class="logo">HOZA.</a>
-  <a href="index.html" class="back">BACK TO HOME ↗</a>
-</header>
+  <main>
+    <div class="page-title">
+      <h1>ANIMATION &amp; VISUAL ART</h1>
+      <p>2D / 3D Animation · Character Design · Modeling · Visual Development</p>
+    </div>
 
-<main>
+    <nav class="section-nav" aria-label="Browse animation and visual art">
+      <a href="#projects">PROJECTS</a>
+      <a href="#characters">CHARACTERS</a>
+      <a href="#artwork">2D &amp; 3D ARTWORK</a>
+      <a href="#development">IN DEVELOPMENT</a>
+    </nav>
 
-  <div class="page-title">
-    <h1>ANIMATION</h1>
-  </div>
-
-  <!-- PROJECT 01: HARRY V -->
-
-  <a href="harry-v.html" class="project">
-
-    <img
-      src="videos/harry-v-cover.jpg"
-      alt="HARRY V Animation Project">
-
-    <div class="project-info">
-
-      <div>
-        <h2>HARRY V</h2>
-        <p>01 / ANIMATION PROJECT</p>
+    <section class="portfolio-section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-head">
+        <span class="section-number">01 /</span>
+        <h2 id="projects-heading">PROJECTS</h2>
+        <p>Complete animation projects, stories and production work.</p>
       </div>
+      <div class="projects-grid">
+        <a href="harry-v.html" class="work-card project-card">
+          <img src="videos/harry-v-cover.jpg" alt="HARRY V — Animation project" loading="lazy">
+          <div class="card-content">
+            <h3>HARRY V</h3>
+            <div class="card-meta"><span>ANIMATION PROJECT</span><span>EXPLORE ↗</span></div>
+          </div>
+        </a>
+        <a href="hv-store.html" class="work-card project-card hv-store-card">
+          <img src="images/hv-store/hv-store-cover.jpg" alt="HV STORE — Animation project" loading="lazy">
+          <div class="card-content">
+            <h3>HV STORE</h3>
+            <div class="card-meta"><span>ANIMATION PROJECT</span><span>EXPLORE ↗</span></div>
+          </div>
+        </a>
+        <a href="rocket-space.html" class="work-card project-card">
+          <img src="videos/rocket-space-cover.jpg" alt="ROCKET SPACE — Animation project" loading="lazy">
+          <div class="card-content">
+            <h3>ROCKET SPACE</h3>
+            <div class="card-meta"><span>ANIMATION PROJECT</span><span>EXPLORE ↗</span></div>
+          </div>
+        </a>
+        <a href="runaway-ride.html" class="work-card project-card">
+          <img src="videos/runaway-ride-cover.jpg" alt="RUNAWAY RIDE — Stylized short animation" loading="lazy">
+          <div class="card-content">
+            <h3>RUNAWAY RIDE</h3>
+            <div class="card-meta"><span>STYLIZED SHORT ANIMATION</span><span>EXPLORE ↗</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
 
-      <span class="explore">
-        EXPLORE PROJECT ↗
-      </span>
+    <section class="portfolio-section" id="characters" aria-labelledby="characters-heading">
+      <div class="section-head">
+        <span class="section-number">02 /</span>
+        <h2 id="characters-heading">CHARACTERS</h2>
+        <p>Character design, development and animation.</p>
+      </div>
+      <div class="characters-grid">
+        <a href="dematre.html" class="work-card character-card">
+          <img src="videos/dematre-cover.jpg" alt="DEMATRE — 2D character animation" loading="lazy">
+          <div class="card-content">
+            <h3>DEMATRE</h3>
+            <div class="card-meta"><span>CHARACTER DESIGN</span><span>EXPLORE ↗</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
 
-    </div>
+    <section class="portfolio-section" id="artwork" aria-labelledby="artwork-heading">
+      <div class="section-head">
+        <span class="section-number">03 /</span>
+        <h2 id="artwork-heading">2D &amp; 3D ARTWORK</h2>
+        <p>Modeling, environments, illustrations, props and visual exploration.</p>
+      </div>
+      <div class="empty-state">Individual artworks will be featured here.</div>
+    </section>
 
-  </a>
-
-<!-- PROJECT 02: HV STORE -->
-<a href="hv-store.html" class="project hv-store-project">
-  <img
-    src="images/hv-store/hv-store-cover.jpg"
-    alt="HV STORE — 3D Animation Project">
-
-  <div class="project-info">
-    <div>
-      <h2>HV STORE</h2>
-      <p>02 / ANIMATION PROJECT</p>
-    </div>
-    <span class="explore">EXPLORE PROJECT ↗</span>
-  </div>
-</a>
-
-<!-- PROJECT 03: ROCKET SPACE -->
-<a href="rocket-space.html" class="project">
-  <img
-    src="videos/rocket-space-cover.jpg"
-    alt="ROCKET SPACE Animation Project">
-
-  <div class="project-info">
-    <div>
-      <h2>ROCKET SPACE</h2>
-      <p>03 / ANIMATION PROJECT</p>
-    </div>
-
-    <span class="explore">
-      EXPLORE PROJECT ↗
-    </span>
-  </div>
-</a>
-
-<!-- PROJECT 04: RUNAWAY RIDE -->
-<a href="runaway-ride.html" class="project">
-  <img
-    src="videos/runaway-ride-cover.jpg"
-    alt="Runaway Ride — Stylized Short Animation">
-
-  <div class="project-info">
-    <div>
-      <h2>RUNAWAY RIDE</h2>
-      <p>04 / ANIMATION PROJECT</p>
-    </div>
-
-    <span class="explore">
-      EXPLORE PROJECT ↗
-    </span>
-  </div>
-</a>
-
-<!-- PROJECT 05: DEMATRE -->
-<a href="dematre.html" class="project">
-  <img
-    src="videos/dematre-cover.jpg"
-    alt="DEMATRE — 2D Character Animation">
-
-  <div class="project-info">
-    <div>
-      <h2>DEMATRE</h2>
-      <p>05 / ANIMATION PROJECT</p>
-    </div>
-
-    <span class="explore">
-      EXPLORE PROJECT ↗
-    </span>
-  </div>
-</a>
-
-</main>
-
+    <section class="portfolio-section" id="development" aria-labelledby="development-heading">
+      <div class="section-head">
+        <span class="section-number">04 /</span>
+        <h2 id="development-heading">IN DEVELOPMENT</h2>
+        <p>Upcoming projects. Cover previews only — no project pages.</p>
+      </div>
+      <div class="empty-state">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        Project previews will appear here.
+      </div>
+    </section>
+  </main>
 </body>
 </html>
