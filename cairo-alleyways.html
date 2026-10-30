@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cairo Alleyways — stylized 3D environment art, Cairo rooftops, night scenes, street details, and visual development by HOZA.">
+  <title>CAIRO ALLEYWAYS — HOZA</title>
+  <style>
+    :root {color-scheme:dark; --bg:#09090b; --text:#f5f5f5; --muted:#9fa0a7; --line:rgba(255,255,255,.17);}
+    * {box-sizing:border-box;}
+    body {margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif;}
+    a {color:inherit; text-decoration:none;}
+    header {max-width:1180px; margin:0 auto; padding:28px 24px; display:flex; align-items:center; justify-content:space-between; gap:18px;}
+    .logo {font-size:34px; font-weight:900; letter-spacing:-2px;}
+    .back {font-size:11px; font-weight:700; letter-spacing:1px;}
+    main {max-width:1100px; width:calc(100% - 32px); margin:36px auto 110px;}
+    .eyebrow {font-size:11px; letter-spacing:1.6px; color:var(--muted); font-weight:700;}
+    h1 {font-size:clamp(43px,8vw,96px); font-weight:800; line-height:1.05; letter-spacing:-3px; margin:13px 0 15px;}
+    .intro {color:var(--muted); font-size:13px; line-height:1.8; max-width:710px; margin:0 0 34px;}
+    img {display:block; max-width:100%;}
+    .hero, .landscape-item img {width:100%; height:auto; aspect-ratio:16 / 9; object-fit:contain; background:#222; border-radius:7px;}
+    figure {margin:0;}
+    .hero-caption {display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:11px; color:var(--muted); margin:13px 1px 0;}
+    .section-heading {border-top:1px solid var(--line); margin:63px 0 24px; padding-top:28px;}
+    .section-heading h2 {font-size:clamp(25px,4vw,37px); letter-spacing:-.7px; margin:0 0 10px;}
+    .section-heading p {font-size:12px; line-height:1.7; color:var(--muted); margin:0;}
+    /* Exactly three square renders in one row; overall width aligns with the horizontal renders. */
+    .square-triptych {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; width:100%; align-items:start;}
+    .square-item {min-width:0;}
+    .square-item a, .landscape-item a {display:block; border-radius:7px; overflow:hidden; background:#202024;}
+    .square-item img {width:100%; aspect-ratio:1 / 1; height:auto; object-fit:contain;}
+    .square-item figcaption {font-size:10px; color:var(--muted); letter-spacing:.5px; margin-top:12px;}
+    .landscape-gallery {display:flex; flex-direction:column; gap:31px;}
+    .landscape-item figcaption {display:flex; justify-content:space-between; gap:10px; color:var(--muted); font-size:11px; margin:12px 1px 0; letter-spacing:.4px;}
+    a:focus-visible {outline:2px solid #fff; outline-offset:4px;}
+    .footer-note {color:#7d7d85; font-size:11px; margin:35px 0 0;}
+    @media(max-width:700px) {
+      header {padding:22px 16px;} .logo {font-size:29px;} .back {font-size:10px;}
+      main {margin:18px auto 75px;} h1 {letter-spacing:-1.3px;}
+      .section-heading {margin-top:44px;}
+      .square-triptych {gap:7px;} .square-item figcaption {font-size:9px; letter-spacing:0; margin-top:8px;}
+      .landscape-gallery {gap:23px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html" aria-label="HOZA Home">HOZA.</a>
+    <a class="back" href="animation.html#artwork">BACK TO ARTWORK ↗</a>
+  </header>
+  <main>
+    <div class="eyebrow">3D ENVIRONMENT / MODELING / VISUAL DEVELOPMENT</div>
+    <h1>CAIRO ALLEYWAYS</h1>
+    <p class="intro">A stylized exploration of Cairo's rooftops and neighborhood architecture, shaped by everyday urban details—from satellite dishes, narrow stairways and laundry lines to improvised rooftop spaces. The scene moves between daylight colors and atmospheric nighttime views.</p>
+
+    <figure>
+      <img class="hero" src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/7079878b-befc-42a9-bced-1de3afe74153.jpg" alt="Cairo Alleyways main artwork showing colorful stylized Egyptian buildings, rooftops and satellite dishes" width="1920" height="1080" fetchpriority="high">
+      <figcaption class="hero-caption"><span>MAIN / ENVIRONMENT OVERVIEW</span><span>3D ARTWORK</span></figcaption>
+    </figure>
+
+    <section aria-labelledby="night-heading">
+      <div class="section-heading">
+        <h2 id="night-heading">NIGHT ROOFTOP STUDIES</h2>
+        <p>Three viewpoints, one uninterrupted row—each image retains its full square composition.</p>
+      </div>
+      <div class="square-triptych">
+        <figure class="square-item">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/1b1f2211-225d-410f-adc0-74a3eeced83d.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size view 1 of the Cairo rooftop night scene">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/1b1f2211-225d-410f-adc0-74a3eeced83d.jpg" alt="Stylized night rooftop with furniture, chairs, ladders and surrounding Cairo buildings" loading="lazy" decoding="async" width="2048" height="2048">
+          </a>
+          <figcaption>NIGHT ROOFTOP / 01</figcaption>
+        </figure>
+        <figure class="square-item">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/bf9bfa5e-4703-44a8-83f6-674041fcbc62.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size view 2 of the Cairo rooftop night scene">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/bf9bfa5e-4703-44a8-83f6-674041fcbc62.jpg" alt="Cairo rooftop 3D environment with satellite dishes, storage and room props under starry sky" loading="lazy" decoding="async" width="2048" height="2048">
+          </a>
+          <figcaption>NIGHT ROOFTOP / 02</figcaption>
+        </figure>
+        <figure class="square-item">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/4bf291de-ddba-4824-9a1b-4cea61190a20.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size view 3 of the Cairo rooftop night scene">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/4bf291de-ddba-4824-9a1b-4cea61190a20.jpg" alt="Rooftop structural wooden pigeon tower and storage objects in stylized Cairo night scene" loading="lazy" decoding="async" width="2048" height="2048">
+          </a>
+          <figcaption>NIGHT ROOFTOP / 03</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="detail-heading">
+      <div class="section-heading">
+        <h2 id="detail-heading">ENVIRONMENT &amp; DETAILS</h2>
+        <p>Rooftop props, surrounding buildings, materials and daylit urban compositions.</p>
+      </div>
+      <div class="landscape-gallery">
+        <figure class="landscape-item">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/063d35ae-f3fc-4702-9c40-313323f4744b.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open 01 / ROOFTOP & SKYLINE at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/063d35ae-f3fc-4702-9c40-313323f4744b.jpg" alt="Stylized neighborhood rooftop with satellite dishes, clotheslines and Cairo skyline in pastel daylight" loading="lazy" decoding="async" width="1920" height="1080">
+          </a>
+          <figcaption><span>01 / ROOFTOP & SKYLINE</span><span aria-hidden="true">↗</span></figcaption>
+        </figure>
+        <figure class="landscape-item">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/12bb4749-c3d9-40c5-bd74-6f76ba2a7667.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open 02 / ROOFTOP DETAILS at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/12bb4749-c3d9-40c5-bd74-6f76ba2a7667.jpg" alt="Detailed Cairo rooftop environment with equipment, fans, television, furniture and adjacent buildings" loading="lazy" decoding="async" width="1920" height="1080">
+          </a>
+          <figcaption><span>02 / ROOFTOP DETAILS</span><span aria-hidden="true">↗</span></figcaption>
+        </figure>
+        <figure class="landscape-item">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/c980555c-9fff-430a-a342-59df505c9364.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open 03 / URBAN ENVIRONMENT at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/c980555c-9fff-430a-a342-59df505c9364.jpg" alt="3D render showing Cairo rooftop satellite dishes and dense neighboring apartment buildings" loading="lazy" decoding="async" width="1920" height="1080">
+          </a>
+          <figcaption><span>03 / URBAN ENVIRONMENT</span><span aria-hidden="true">↗</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    <p class="footer-note">Click any artwork to inspect its full resolution.</p>
+  </main>
+</body>
+</html>
