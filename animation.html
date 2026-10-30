@@ -209,6 +209,48 @@
     }
     .character-card .card-meta { font-size: 9px; }
 
+
+    /* Extra character cards remain available without taking space by default. */
+    .more-characters { margin-top: 16px; }
+    .more-characters-toggle {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; width: 100%; min-height: 59px;
+      padding: 16px 24px; border: 1px solid rgba(255,255,255,.17);
+      background: rgba(255,255,255,.035); border-radius: 8px;
+      color: #e7e7ea; cursor: pointer; font-size: 12px;
+      font-weight: 700; letter-spacing: 2px;
+      transition: background .2s ease, border-color .2s ease;
+      list-style: none; user-select: none;
+    }
+    .more-characters-toggle::-webkit-details-marker { display: none; }
+    .more-characters-toggle::marker { content: ""; }
+    .more-characters-toggle:hover {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.38);
+    }
+    .more-characters-toggle:focus-visible {
+      outline: 2px solid #fff; outline-offset: 3px;
+    }
+    .more-characters-less { display: none; }
+    .more-characters-symbol {
+      display: inline-block; width: 7px; height: 7px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg); margin-top: -4px;
+    }
+    .more-characters[open] .more-characters-more { display: none; }
+    .more-characters[open] .more-characters-less { display: inline; }
+    .more-characters[open] .more-characters-symbol { transform: rotate(225deg); margin-top: 4px; }
+    .more-characters .extra-characters { margin-top: 16px; }
+    @media (max-width: 700px) {
+      .more-characters { margin-top: 12px; }
+      .more-characters .extra-characters { margin-top: 12px; }
+      .more-characters-toggle { min-height: 54px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .more-characters-toggle { transition: none; }
+    }
+
     /* Empty sections are intentionally clean until real work is uploaded */
     .empty-state {
       min-height: 78px;
@@ -448,6 +490,14 @@
             <div class="card-meta"><span>CHARACTER DESIGN</span><span>EXPLORE ↗</span></div>
           </div>
         </a>
+      </div>
+      <details class="more-characters" id="more-characters">
+        <summary class="more-characters-toggle" aria-label="Show or hide more characters">
+          <span class="more-characters-more">MORE</span>
+          <span class="more-characters-less">LESS</span>
+          <span class="more-characters-symbol" aria-hidden="true"></span>
+        </summary>
+        <div class="characters-grid extra-characters">
         <a href="kozbara.html" class="work-card character-card">
           <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/0241c77f-1033-48b1-9fa1-30ffc731c7d8.jpg" alt="KOZBARA — original 2D character design" loading="lazy" decoding="async">
           <div class="card-content">
@@ -462,7 +512,8 @@
             <div class="card-meta"><span>CHARACTER DESIGN</span><span>EXPLORE ↗</span></div>
           </div>
         </a>
-      </div>
+        </div>
+      </details>
     </section>
 
     <section class="portfolio-section" id="artwork" aria-labelledby="artwork-heading">
