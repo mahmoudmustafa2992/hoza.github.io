@@ -249,6 +249,97 @@
       html { scroll-behavior: auto; }
       .work-card img, .section-nav a { transition: none; }
     }
+
+    /* Artwork — Shahid-style horizontal project shelf. The artwork cards
+       stay in one row as future projects are appended. */
+    #artwork .artwork-heading-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    #artwork .artwork-heading-row .section-head { margin-bottom: 0; }
+    .artwork-controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+      gap: 18px;
+      padding-bottom: 4px;
+    }
+    .artwork-controls[hidden] { display: none; }
+    .artwork-arrows { display: flex; gap: 8px; }
+    .artwork-arrow {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 50%;
+      color: white;
+      font-size: 21px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .2s ease, opacity .2s ease;
+    }
+    .artwork-arrow:not(:disabled):hover { background: rgba(255,255,255,.2); }
+    .artwork-arrow:focus-visible, .artwork-dot:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+    .artwork-arrow:disabled { opacity: .24; cursor: default; }
+    .artwork-dots { display: flex; align-items: center; gap: 7px; }
+    .artwork-dot {
+      padding: 0; width: 7px; height: 7px; border: 0;
+      border-radius: 100px; background: rgba(255,255,255,.28);
+      cursor: pointer; transition: width .2s ease, background .2s ease;
+    }
+    .artwork-dot[aria-current="true"] { width: 27px; background: rgba(255,255,255,.82); }
+    .artwork-carousel { position: relative; isolation: isolate; }
+    .artwork-carousel::after {
+      content: ""; position: absolute; right: 0; top: 0; bottom: 8px;
+      width: clamp(32px, 7vw, 75px);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      background: linear-gradient(to right, transparent, rgba(9,9,11,.85));
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      transition: opacity .25s ease;
+    }
+    .artwork-carousel.can-scroll-next::after { opacity: 1; }
+    .artwork-track {
+      display: flex; gap: 16px; overflow-x: auto; overflow-y: hidden;
+      scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      overscroll-behavior-x: contain; scrollbar-width: none;
+      padding-bottom: 8px;
+    }
+    .artwork-track::-webkit-scrollbar { display: none; }
+    #artwork .artwork-card {
+      flex: 0 0 56%; scroll-snap-align: start; scroll-snap-stop: always;
+      aspect-ratio: 16 / 9;
+    }
+    /* With 3+ projects show two full cards plus a preview of the next. */
+    #artwork .artwork-track:has(> .artwork-card:nth-child(3)) .artwork-card { flex-basis: 43%; }
+    #artwork .artwork-card .card-content h3 { font-size: clamp(19px, 2.65vw, 31px); }
+    @media (max-width: 700px) {
+      #artwork .artwork-heading-row { align-items: flex-end; gap: 10px; }
+      .artwork-controls { gap: 8px; }
+      .artwork-dots { gap: 5px; }
+      .artwork-arrow { width: 32px; height: 32px; font-size: 19px; }
+      .artwork-track { gap: 12px; }
+      #artwork .artwork-card,
+      #artwork .artwork-track:has(> .artwork-card:nth-child(3)) .artwork-card { flex-basis: 84%; }
+      #artwork .artwork-card .card-content h3 { font-size: clamp(18px, 4.5vw, 28px); }
+      .artwork-carousel::after { width: 36px; }
+    }
+    @media (max-width: 430px) {
+      #artwork .artwork-heading-row { display: block; }
+      .artwork-controls { margin-top: 12px; }
+      #artwork .artwork-card,
+      #artwork .artwork-track:has(> .artwork-card:nth-child(3)) .artwork-card { flex-basis: 86%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .artwork-track { scroll-behavior: auto; }
+      .artwork-arrow, .artwork-dot, .artwork-carousel::after { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -375,26 +466,37 @@
     </section>
 
     <section class="portfolio-section" id="artwork" aria-labelledby="artwork-heading">
+      <div class="artwork-heading-row">
       <div class="section-head">
         <span class="section-number">03 /</span>
         <h2 id="artwork-heading">2D &amp; 3D ARTWORK</h2>
         <p>Modeling, environments, illustrations, props and visual exploration.</p>
       </div>
-      <div class="projects-grid">
-        <a href="butcher-shop.html" class="work-card project-card" aria-label="Explore Butcher Shop 3D artwork">
+      <div class="artwork-controls" id="artwork-controls" hidden aria-label="Browse artworks">
+        <div class="artwork-dots" id="artwork-dots" aria-label="Artwork positions"></div>
+        <div class="artwork-arrows">
+          <button type="button" class="artwork-arrow" id="artwork-prev" aria-label="Previous artwork" disabled>←</button>
+          <button type="button" class="artwork-arrow" id="artwork-next" aria-label="Next artwork">→</button>
+        </div>
+      </div>
+      </div>
+      <div class="artwork-carousel" id="artwork-carousel">
+      <div class="artwork-track" id="artwork-track" role="region" aria-label="2D and 3D artwork projects" aria-roledescription="carousel" tabindex="0">
+        <a href="butcher-shop.html" class="work-card project-card artwork-card" aria-label="Explore Butcher Shop 3D artwork">
           <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/24018de1-9956-4b91-8982-aea1f151ccdd.png" alt="Butcher Shop — 3D modeling and material artwork" loading="lazy">
           <div class="card-content">
             <h3>BUTCHER SHOP</h3>
             <div class="card-meta"><span>3D MODELING &amp; TEXTURING</span><span>EXPLORE ↗</span></div>
           </div>
         </a>
-        <a href="nonsense.html" class="work-card project-card" aria-label="Explore Nonsense 2D comic artwork">
+        <a href="nonsense.html" class="work-card project-card artwork-card" aria-label="Explore Nonsense 2D comic artwork">
           <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/9b2941db-d78f-46dc-9652-a76921c72350.png" alt="Nonsense — Arabic comic book artwork" loading="lazy">
           <div class="card-content">
             <h3>NONSENSE</h3>
             <div class="card-meta"><span>2D ARTWORK &amp; COMIC DESIGN</span><span>EXPLORE ↗</span></div>
           </div>
         </a>
+      </div>
       </div>
     </section>
 
@@ -410,5 +512,90 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (() => {
+      const track = document.getElementById('artwork-track');
+      const shell = document.getElementById('artwork-carousel');
+      const controls = document.getElementById('artwork-controls');
+      const prev = document.getElementById('artwork-prev');
+      const next = document.getElementById('artwork-next');
+      const dots = document.getElementById('artwork-dots');
+      if (!track || !shell || !controls || !prev || !next || !dots) return;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let positions = [0];
+      let scrollPending = false;
+
+      function computePositions() {
+        const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        const cards = Array.from(track.querySelectorAll('.artwork-card'));
+        const origin = cards[0]?.offsetLeft ?? 0;
+        const stops = [0];
+        for (const card of cards.slice(1)) {
+          const stop = Math.min(maxScroll, Math.max(0, card.offsetLeft - origin));
+          if (stop - stops[stops.length - 1] > 3) stops.push(stop);
+        }
+        if (maxScroll - stops[stops.length - 1] > 3) stops.push(maxScroll);
+        positions = stops;
+        controls.hidden = maxScroll <= 3;
+        dots.replaceChildren();
+        if (maxScroll <= 3) {
+          shell.classList.remove('can-scroll-next');
+          return;
+        }
+        for (let i = 0; i < positions.length; i++) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'artwork-dot';
+          button.setAttribute('aria-label', 'View artwork position ' + (i + 1));
+          button.addEventListener('click', () => moveTo(i));
+          dots.appendChild(button);
+        }
+        update();
+      }
+
+      function nearestIndex() {
+        let best = 0;
+        for (let i = 1; i < positions.length; i++) {
+          if (Math.abs(positions[i] - track.scrollLeft) < Math.abs(positions[best] - track.scrollLeft)) best = i;
+        }
+        return best;
+      }
+
+      function update() {
+        const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        prev.disabled = track.scrollLeft <= 3;
+        next.disabled = track.scrollLeft >= maxScroll - 3;
+        shell.classList.toggle('can-scroll-next', maxScroll > 3 && !next.disabled);
+        const index = nearestIndex();
+        Array.from(dots.children).forEach((dot, i) => {
+          if (i === index) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+      }
+
+      function moveTo(index) {
+        const destination = positions[Math.max(0, Math.min(index, positions.length - 1))];
+        track.scrollTo({ left: destination, behavior: reducedMotion ? 'auto' : 'smooth' });
+      }
+
+      prev.addEventListener('click', () => moveTo(Math.max(0, nearestIndex() - 1)));
+      next.addEventListener('click', () => moveTo(Math.min(positions.length - 1, nearestIndex() + 1)));
+      track.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          moveTo(nearestIndex() + (event.key === 'ArrowRight' ? 1 : -1));
+        }
+      });
+      track.addEventListener('scroll', () => {
+        if (scrollPending) return;
+        scrollPending = true;
+        requestAnimationFrame(() => { scrollPending = false; update(); });
+      }, { passive: true });
+      window.addEventListener('resize', computePositions);
+      if ('ResizeObserver' in window) new ResizeObserver(computePositions).observe(track);
+      computePositions();
+    })();
+  </script>
 </body>
 </html>
