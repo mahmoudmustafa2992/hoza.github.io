@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ICE CREAM CART — stylized Egyptian street cart created with 3D modeling and hand-painted textures by HOZA.">
+  <title>ICE CREAM CART — HOZA</title>
+  <style>
+    :root { color-scheme:dark; --bg:#09090b; --muted:#a5a5ab; --line:rgba(255,255,255,.17); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:#fff; font-family:Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .header { max-width:1180px; margin:0 auto; padding:28px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .logo { font-size:34px; font-weight:900; letter-spacing:-2px; }
+    .back { font-size:11px; font-weight:700; letter-spacing:1px; }
+    main { width:calc(100% - 32px); max-width:1100px; margin:38px auto 110px; }
+    .eyebrow { color:var(--muted); font-size:11px; letter-spacing:2px; font-weight:700; }
+    h1 { margin:14px 0 14px; font-size:clamp(44px,8vw,96px); line-height:1.05; letter-spacing:-3px; }
+    .description { max-width:700px; color:var(--muted); font-size:13px; line-height:1.8; margin:0 0 34px; }
+    .overview { margin:0; }
+    .overview img { display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:contain; border-radius:7px; background:#353535; }
+    .overview figcaption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:11px; color:var(--muted); margin:13px 1px 0; }
+    .section-heading { display:flex; justify-content:space-between; align-items:baseline; gap:18px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:30px; margin:65px 0 24px; }
+    .section-heading h2 { font-size:clamp(25px,4vw,38px); letter-spacing:-.8px; margin:0; }
+    .section-heading p { color:var(--muted); font-size:12px; line-height:1.7; margin:0; }
+    .gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 18px; }
+    .shot { min-width:0; margin:0; }
+    .shot:first-child { grid-column:span 2; }
+    .shot a { display:block; background:#292929; border-radius:7px; overflow:hidden; outline-offset:4px; }
+    .shot a:focus-visible, .back:focus-visible { outline:2px solid white; outline-offset:4px; }
+    .shot img { display:block; width:100%; height:auto; aspect-ratio:1 / 1; object-fit:contain; transition:transform .35s ease; }
+    .shot a:hover img { transform:scale(1.015); }
+    .shot figcaption { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:11px; color:#a8a8ad; margin:11px 2px 0; letter-spacing:.25px; }
+    .note { font-size:11px; color:#797980; margin:29px 0 0; }
+    @media(max-width:700px) {
+      .header { padding:22px 16px; } .logo { font-size:29px; } .back { font-size:10px; }
+      main { margin:22px auto 75px; } h1 { letter-spacing:-1.7px; }
+      .section-heading { margin-top:47px; } .gallery { grid-template-columns:1fr; gap:22px; }
+      .shot:first-child { grid-column:span 1; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .shot img { transition:none; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="HOZA home">HOZA.</a>
+    <a class="back" href="animation.html#artwork">BACK TO ARTWORK ↗</a>
+  </header>
+  <main>
+    <div class="eyebrow">3D MODELING / HAND-PAINTED TEXTURES / STYLIZED PROP</div>
+    <h1>ICE CREAM CART</h1>
+    <p class="description">A stylized 3D recreation of a traditional Egyptian ice cream cart. Modeled in 3D with individually painted surface details, colorful illustrated signage and a bicycle-cart structure.</p>
+    <figure class="overview">
+      <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/fbb304a3-40bf-435a-a92a-0e560078b11e.png" alt="Three different views of a stylized Egyptian ice cream cart with a bicycle and hand-painted panels" fetchpriority="high">
+      <figcaption><span>PROJECT OVERVIEW</span><span>01 / 3D PROP DESIGN</span></figcaption>
+    </figure>
+    <div class="section-heading">
+      <h2>MODELING &amp; DETAILS</h2>
+      <p>Five perspectives exploring the cart's structure, surfaces and illustrated textures.</p>
+    </div>
+    <section class="gallery" aria-label="Ice cream cart 3D renders">
+        <figure class="shot">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/5311d718-f0ad-4adb-82c3-20826cfab607.jpg" target="_blank" rel="noopener noreferrer" aria-label="View 01 / Hero Perspective at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/5311d718-f0ad-4adb-82c3-20826cfab607.jpg" alt="Stylized 3D Egyptian ice cream street cart viewed from a front-side angle, with hand-drawn illustrated panels" loading="lazy" decoding="async">
+          </a>
+          <figcaption>01 / Hero Perspective<span aria-hidden="true">↗</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/3a4dc4db-9015-46ee-8dfd-1bb8ec370aaa.jpg" target="_blank" rel="noopener noreferrer" aria-label="View 02 / Display Detail at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/3a4dc4db-9015-46ee-8dfd-1bb8ec370aaa.jpg" alt="3D ice cream cart showing metal display cases, serving counter and traditional illustrations" loading="lazy" decoding="async">
+          </a>
+          <figcaption>02 / Display Detail<span aria-hidden="true">↗</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/5b0c48d3-043b-403e-ac71-4a9870630161.jpg" target="_blank" rel="noopener noreferrer" aria-label="View 03 / Opposite Perspective at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/5b0c48d3-043b-403e-ac71-4a9870630161.jpg" alt="Three-quarter angle of an Egyptian bicycle ice cream cart with colorful hand-painted signage" loading="lazy" decoding="async">
+          </a>
+          <figcaption>03 / Opposite Perspective<span aria-hidden="true">↗</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/bd888d41-e727-4929-b90a-942c1f0d678f.jpg" target="_blank" rel="noopener noreferrer" aria-label="View 04 / Front & Side at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/bd888d41-e727-4929-b90a-942c1f0d678f.jpg" alt="Front and side three-dimensional view of an Egyptian street ice cream cart" loading="lazy" decoding="async">
+          </a>
+          <figcaption>04 / Front & Side<span aria-hidden="true">↗</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/458d8148-7e66-4452-aa0c-a26a4bf85ba2.jpg" target="_blank" rel="noopener noreferrer" aria-label="View 05 / Rear & Bicycle at full size">
+            <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_30JYk1lIz5AcI6xVWLe8KnwSHnv/458d8148-7e66-4452-aa0c-a26a4bf85ba2.jpg" alt="Rear angle showcasing the ice cream cart 3D modeling, bicycle, wheels and structure" loading="lazy" decoding="async">
+          </a>
+          <figcaption>05 / Rear & Bicycle<span aria-hidden="true">↗</span></figcaption>
+        </figure>
+    </section>
+    <p class="note">Select any render to inspect it at full resolution.</p>
+  </main>
+</body>
+</html>
