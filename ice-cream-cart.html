@@ -27,6 +27,7 @@
     .gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 18px; }
     .shot { min-width:0; margin:0; }
     .shot:first-child { grid-column:span 2; }
+    .shot:first-child img { aspect-ratio:16 / 10; }
     .shot a { display:block; background:#292929; border-radius:7px; overflow:hidden; outline-offset:4px; }
     .shot a:focus-visible, .back:focus-visible { outline:2px solid white; outline-offset:4px; }
     .shot img { display:block; width:100%; height:auto; aspect-ratio:1 / 1; object-fit:contain; transition:transform .35s ease; }
