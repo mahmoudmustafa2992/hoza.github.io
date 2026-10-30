@@ -426,20 +426,35 @@
     }
     #artwork .artwork-carousel .artwork-arrow {
       width: 46px;
-      height: 46px;
+      height: 50px;
       flex: 0 0 46px;
-      background: rgba(12,12,15,.85);
-      border: 1px solid rgba(255,255,255,.45);
-      box-shadow: 0 3px 22px rgba(0,0,0,.5);
-      -webkit-backdrop-filter: blur(6px);
-      backdrop-filter: blur(6px);
+      display: grid;
+      place-items: center;
+      padding: 0;
+      color: #fff;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
       pointer-events: auto;
-      transition: background .2s ease, transform .2s ease, opacity .2s ease;
+      cursor: pointer;
+      transition: transform .2s ease, opacity .2s ease;
     }
-    #artwork .artwork-carousel .artwork-arrow:not(:disabled):hover {
-      background: rgba(255,255,255,.24);
-      transform: scale(1.07);
+    #artwork .artwork-carousel .artwork-arrow svg {
+      width: 24px;
+      height: 30px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,.55));
     }
+    #artwork .artwork-carousel #artwork-prev:not(:disabled):hover { transform: translateX(-3px); }
+    #artwork .artwork-carousel #artwork-next:not(:disabled):hover { transform: translateX(3px); }
     #artwork .artwork-carousel .artwork-arrow:disabled {
       opacity: 0;
       visibility: hidden;
@@ -645,8 +660,8 @@
               <div class="artwork-controls" id="artwork-controls" hidden aria-label="Browse artworks">
           <div class="artwork-dots" id="artwork-dots" aria-label="Artwork positions"></div>
           <div class="artwork-arrows">
-            <button type="button" class="artwork-arrow" id="artwork-prev" aria-label="Previous artwork" disabled>←</button>
-            <button type="button" class="artwork-arrow" id="artwork-next" aria-label="Next artwork">→</button>
+            <button type="button" class="artwork-arrow" id="artwork-prev" aria-label="Previous artwork" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 4 L8 12 L16 20"/></svg></button>
+            <button type="button" class="artwork-arrow" id="artwork-next" aria-label="Next artwork"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 4 L16 12 L8 20"/></svg></button>
           </div>
         </div>
       </div>
